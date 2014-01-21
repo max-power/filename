@@ -2,20 +2,14 @@
 
 Simple Filename helper. Works well with Pathname.
 
+    Pathname.new('ruby') + Filename.new('love', :rb)
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'filename'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install filename
-
+    gem 'filename', github: 'max-power/filename'
+	
 ## Usage
 
     Filename.new('Gemfile').to_s
