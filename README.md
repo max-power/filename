@@ -38,8 +38,8 @@ Or install it yourself as:
   
 Filename is build to work well with Pathname:
 
-	Pathname.new('/this/is-a') + Filename.new('test', 'file')  
-	# '/this/is-a/test.file'
+	Pathname.new('/this/is-a') + Filename.new('big', 'test', 'file')  
+	# '/this/is-a/big.test.file'
 
 ## Contributing
 
