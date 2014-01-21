@@ -22,8 +22,12 @@ describe Filename do
     Filename.new('index', ['html', 'erb']).to_s.must_equal 'index.html.erb'
   end
   
-  it "should create a filename with more than one extension and remove nil values" do
+  it "should create a filename with more than one extension as array and remove nil values" do
     Filename.new('index', ['html', nil, 'erb', nil]).to_s.must_equal 'index.html.erb'
+  end
+  
+  it "should create a filename with more than one extension as arguments and remove nil values" do
+    Filename.new('index', 'html', nil, 'erb', nil).to_s.must_equal 'index.html.erb'
   end
   
   it "should create a filename with extension, but without base" do
