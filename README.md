@@ -1,6 +1,6 @@
 # Filename
 
-TODO: Write a gem description
+Simple Filename helper. Works well with Pathname.
 
 ## Installation
 
