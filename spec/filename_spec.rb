@@ -58,4 +58,20 @@ describe Filename do
     f.base.must_equal ''
     f.extensions.must_equal ['htaccess']
   end
+  
+  it "should extend the basename" do
+    f = Filename.parse('image.jpg').extend_base('200x200', 'greyscale')
+    f.base.must_equal "image_200x200_greyscale"
+  end
+  
+  it "should extend the basename with custom seperator" do
+    f = Filename.parse('image.jpg').extend_base('200x200', 'greyscale', seperator: '--')
+    f.base.must_equal "image--200x200--greyscale"
+  end
+  
+  it "should extend the basename and strip stupid values" do
+    f = Filename.parse('image.jpg').extend_base('  200x200 ', nil, 'greyscale', '  ', 1)
+    f.base.must_equal "image_200x200_greyscale_1"
+  end
+  
 end

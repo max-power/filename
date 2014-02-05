@@ -26,6 +26,9 @@ Add this line to your application's Gemfile:
     
 	Filename.new(nil, 'htaccess').to_s 
 	# '.htaccess'
+	
+	Filename.parse('landscape.jpg').extend_base('400x300', 'greyscale', 'inverted').to_s
+	# 'landscape_400x300_greyscale_inverted.jpg'
   
 Filename is build to work well with Pathname:
 

@@ -15,4 +15,9 @@ class Filename
   
   alias_method  :to_path, :to_s
   attr_accessor :base, :extensions
+  
+  def extend_base(*values, seperator: '_')
+    @base << seperator + values.map { |v| v.to_s.strip }.reject(&:empty?).join(seperator)
+    self
+  end
 end
