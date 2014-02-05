@@ -10,11 +10,11 @@ class Filename
   end
   
   def suffix(*values, seperator: '_')
-    @base.push(*clean(values).unshift('').join(seperator)) && self
+    @base.push(clean(values).unshift('').join(seperator)) && self
   end
   
   def prefix(*values, seperator: '_')
-    @base.unshift(*clean(values).push('').join(seperator)) && self
+    @base.unshift(clean(values).push('').join(seperator)) && self
   end
   
   def to_s
