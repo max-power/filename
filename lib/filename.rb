@@ -4,20 +4,28 @@ class Filename
   def self.parse(value)
     new *value.to_s.split('.')
   end
-    
+  
   def initialize(base, *extensions)
-    @base, @extensions = base.to_s, extensions.flatten.compact
+    @base, @extensions = [base.to_s], clean(extensions)
+  end
+  
+  def suffix(*values, seperator: '_')
+    @base.push(*clean(values).unshift('').join(seperator)) && self
+  end
+  
+  def prefix(*values, seperator: '_')
+    @base.unshift(*clean(values).push('').join(seperator)) && self
   end
   
   def to_s
-    @extensions.unshift(@base).join('.')
+    @extensions.unshift(@base.join).join('.')
   end
   
-  alias_method  :to_path, :to_s
-  attr_accessor :base, :extensions
+  alias_method :to_path, :to_s
   
-  def extend_base(*values, seperator: '_')
-    @base << seperator + values.map { |v| v.to_s.strip }.reject(&:empty?).join(seperator)
-    self
+  private
+  
+  def clean(array)
+    array.flatten.map { |v| v.to_s.strip }.reject(&:empty?)
   end
 end
