@@ -40,4 +40,22 @@ describe Filename do
     pathname = Pathname.new('/this/is/a') + Filename.new('test', 'file')
     pathname.to_s.must_equal '/this/is/a/test.file'
   end
+  
+  it "should parse a string" do
+    f = Filename.parse('index.html.erb')
+    f.base.must_equal 'index'
+    f.extensions.must_equal ['html', 'erb']
+  end
+  
+  it "should parse a string without extension" do
+    f = Filename.parse('Gemfile')
+    f.base.must_equal 'Gemfile'
+    f.extensions.must_equal []
+  end
+  
+  it "should parse a string without basename" do
+    f = Filename.parse('.htaccess')
+    f.base.must_equal ''
+    f.extensions.must_equal ['htaccess']
+  end
 end
