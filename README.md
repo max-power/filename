@@ -3,6 +3,9 @@
 Simple Filename helper. Works well with Pathname.
 
     Pathname.new('ruby') + Filename.new('love', :rb)
+	
+[![Gem Version](https://badge.fury.io/rb/filename.png)](http://badge.fury.io/rb/filename)
+[![Build Status](https://travis-ci.org/max-power/filename.png?branch=master)](https://travis-ci.org/max-power/filename)
 
 ## Installation
 
