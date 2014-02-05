@@ -27,8 +27,11 @@ Add this line to your application's Gemfile:
 	Filename.new(nil, 'htaccess').to_s 
 	# '.htaccess'
 	
-	Filename.parse('landscape.jpg').extend_base('400x300', 'greyscale', 'inverted').to_s
+	Filename.parse('landscape.jpg').suffix('400x300', 'greyscale', 'inverted').to_s
 	# 'landscape_400x300_greyscale_inverted.jpg'
+	
+	Filename.parse('landscape.jpg').prefix('very', 'nice', seperator: '--').to_s
+	# 'very--nice--landscape.jpg'
   
 Filename is build to work well with Pathname:
 
