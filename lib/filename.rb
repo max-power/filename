@@ -1,8 +1,10 @@
 require "filename/version"
 
 class Filename
+  attr_accessor :base, :extensions
+  
   def initialize(base, *extensions)
-    @base, @extensions = base, extensions.flatten.compact
+    @base, @extensions = base.to_s, extensions.flatten.compact
   end
   
   def to_s
