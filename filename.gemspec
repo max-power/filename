@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'filename/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "filename"
+  spec.name          = "filename-helper"
   spec.version       = Filename::VERSION
   spec.authors       = ["Max Power"]
   spec.email         = ["kevin.melchert@gmail.com"]
