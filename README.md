@@ -1,11 +1,11 @@
 # Filename
 
+[![Gem Version](https://badge.fury.io/rb/filename-helper.png)](http://badge.fury.io/rb/filename-helper)
+[![Build Status](https://travis-ci.org/max-power/filename.png?branch=master)](https://travis-ci.org/max-power/filename)
+
 Simple Filename helper. Works well with Pathname.
 
-    Pathname.new('ruby') + Filename.new('love', :rb)
-	
-[![GitHub version](https://badge.fury.io/gh/max-power%2Ffilename.png)](http://badge.fury.io/gh/max-power%2Ffilename)
-[![Build Status](https://travis-ci.org/max-power/filename.png?branch=master)](https://travis-ci.org/max-power/filename)
+    Pathname.new('give/me') + Filename.parse('ham.plz').suffix('eggs', seperator: '_and_').prefix(:all, :the)
 
 ## Installation
 
@@ -24,10 +24,10 @@ Add this line to your application's Gemfile:
 	Filename.new('index', ['html', 'erb']).to_s
 	#'index.html.erb'
     
-	Filename.new('index', 'html', nil, 'erb', nil).to_s 
+	Filename.new('index', 'html', nil, 'erb', nil).to_s
 	# 'index.html.erb'
     
-	Filename.new(nil, 'htaccess').to_s 
+	Filename.new(nil, 'htaccess').to_s
 	# '.htaccess'
 	
 	Filename.parse('landscape.jpg').suffix('400x300', 'greyscale', 'inverted').to_s
@@ -38,7 +38,7 @@ Add this line to your application's Gemfile:
   
 Filename is build to work well with Pathname:
 
-	Pathname.new('/this/is-a') + Filename.new('big', 'test', 'file')  
+	Pathname.new('/this/is-a') + Filename.new('big', 'test', 'file')
 	# '/this/is-a/big.test.file'
 
 ## Contributing
