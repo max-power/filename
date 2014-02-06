@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["kevin.melchert@gmail.com"]
   spec.summary       = %q{Simple Filename helper. Works well with Pathname.}
   spec.description   = %q{Simple Filename helper. Works well with Pathname.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/max-power/filename"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
