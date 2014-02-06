@@ -11,7 +11,7 @@ Simple Filename helper. Works well with Pathname.
 
 Add this line to your application's Gemfile:
 
-    gem 'filename', github: 'max-power/filename'
+    gem 'filename-helper'
 	
 ## Usage
 
