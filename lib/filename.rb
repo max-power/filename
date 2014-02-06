@@ -6,7 +6,7 @@ class Filename
   end
   
   def initialize(base, *extensions)
-    @base, @extensions = [base.to_s], clean(extensions)
+    @base, @extensions = clean(base), clean(extensions)
   end
   
   def suffix(*values, seperator: '_')
@@ -25,7 +25,7 @@ class Filename
   
   private
   
-  def clean(array)
-    array.flatten.map { |v| v.to_s.strip }.reject(&:empty?)
+  def clean(input)
+    Array(input).flatten.map { |v| v.to_s.strip }.reject(&:empty?)
   end
 end

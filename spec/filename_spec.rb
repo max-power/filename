@@ -55,8 +55,9 @@ describe Filename do
   
   it "should parse a string without basename" do
     f = Filename.parse('.htaccess')
-    f.instance_variable_get(:@base).must_equal ['']
+    f.instance_variable_get(:@base).must_equal []
     f.instance_variable_get(:@extensions).must_equal ['htaccess']
+    f.to_s.must_equal '.htaccess'
   end
   
   it "should extend the basename" do
